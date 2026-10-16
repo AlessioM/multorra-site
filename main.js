@@ -204,11 +204,12 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
  * ------------------------------------------------------------------ */
 const SHOTS = [
   ["02_quiz", "A question opens", "Time slows down; swipe toward the right answer before the rim runs out."],
-  ["01_run", "On the road", "Archers and mages fire up three lanes while orcs and skeletons come down."],
-  ["03_wrong", "Right and wrong", "The right answer lights up green; a wrong pick shakes red and the road rushes for a moment."],
-  ["04_boss", "Boss fights", "Every fifth level ends with a boss that summons help."],
-  ["05_map", "The level map", "A winding path up the meadow, with stars and locks on every level."],
-  ["06_menu", "Title screen", "A squad keeps playing behind the menu."],
+  ["01_run", "On the road", "Archers, mages, knights and rogues fire up three lanes while orcs and skeletons come down."],
+  ["03_wrong", "Spelling mode", "Find the misspelled word; afterwards it turns into the right spelling. A wrong pick shakes red and the road rushes for a moment."],
+  ["04_boss", "Boss fights", "Every chapter ends with a boss that summons help."],
+  ["08_frost", "Six lands", "Snowy peaks, cliffs, river bridges, a prison and a tavern, each with its own monsters."],
+  ["05_map", "The level map", "One winding path through six lands, with stars and locks on every level."],
+  ["06_menu", "Title screen", "Choose Easy, Medium or Hard, math on or off and a spelling language; a squad keeps playing behind the menu."],
   ["07_result", "Results", "Up to three stars: win, answer three of four right, lose at most two heroes."],
 ];
 
@@ -223,8 +224,8 @@ const SHOTS = [
   });
 
   const things = [["Archers", "#9ad86a"], ["Mages", "#c9a0ff"], ["Orcs", "#f08a4b"], ["Skeletons", "#f4f0dc"],
-    ["Orc Shaman", "#e0607e"], ["Skeleton Mage", "#c9a0ff"], ["7 × 6", "#ffd04f"], ["63 ÷ 9", "#ffd04f"], ["48 + 17", "#ffd04f"],
-    ["Bombs", "#f08a4b"], ["Rapid fire", "#9fd0ff"], ["Slow motion", "#9fd0ff"], ["Stars", "#ffd04f"], ["Bosses", "#e0607e"]];
+    ["Knights", "#9fd0ff"], ["Rogues", "#c9a0ff"], ["Orc Warlord", "#e0607e"], ["Skeleton King", "#f4f0dc"], ["Frost Peaks", "#9fd0ff"], ["River Crossing", "#9fd0ff"], ["7 × 6", "#ffd04f"], ["63 ÷ 9", "#ffd04f"], ["48 + 17", "#ffd04f"],
+    ["Fahrrad", "#9ad86a"], ["because", "#9ad86a"], ["Bombs", "#f08a4b"], ["Rapid fire", "#9fd0ff"], ["Slow motion", "#9fd0ff"], ["Stars", "#ffd04f"], ["Bosses", "#e0607e"]];
   const track = document.getElementById("track");
   const chips = things.map(([c, col]) => `<span class="chip"><b style="color:${col}">●</b>${c}</span>`).join("");
   track.innerHTML = chips + chips;                       // doubled for a seamless loop
