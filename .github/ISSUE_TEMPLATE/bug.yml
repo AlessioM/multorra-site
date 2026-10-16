@@ -1,0 +1,41 @@
+name: Bug report
+description: Something in Multorra doesn't work, crashes or looks wrong
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for testing Multorra! Please don't paste anything private — this page is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we make it happen again?
+      placeholder: "1. Start level 4\n2. Answer the first question by swiping up\n3. ..."
+  - type: input
+    id: where
+    attributes:
+      label: Screen or situation
+      placeholder: e.g. level 6, question dial, level map, results
+  - type: input
+    id: device
+    attributes:
+      label: Phone and Android version
+      placeholder: e.g. Pixel 8 Pro, Android 16
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      description: Shown on the Google Play page or in Android Settings → Apps → Multorra.
+      placeholder: e.g. 0.1.0
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshot or anything else
+      description: Drag screenshots in here.

@@ -1,0 +1,31 @@
+name: Feedback
+description: Pacing, balance, controls, ideas, things you loved or hated
+title: "[Feedback] "
+labels: [feedback]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of feedback?
+      options:
+        - Questions too hard
+        - Questions too easy
+        - Too little / too much time to answer
+        - Something was confusing
+        - Controls / gestures
+        - A hero or monster feels too strong or too weak
+        - Idea or feature request
+        - General impressions
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Level, hero or player age (if you like)
+      placeholder: e.g. level 7, mages, played by an 8-year-old
+  - type: textarea
+    id: details
+    attributes:
+      label: Tell us more
+    validations:
+      required: true

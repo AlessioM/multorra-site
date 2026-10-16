@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multorra — do the math, grow the army</title>
+<meta name="description" content="A pixel-art math runner for the browser and Android: lead a squad of archers and mages up a three-lane road, solve quick sums to recruit more heroes, and beat the orcs and skeletons. Free, no account.">
+<meta name="theme-color" content="#0b170d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Multorra — do the math, grow the army">
+<meta property="og:description" content="Run up three lanes, swipe the right answer to 7 × 6, and watch your squad grow.">
+<meta property="og:image" content="https://alessiom.github.io/multorra-site/img/og.png">
+<meta property="og:url" content="https://alessiom.github.io/multorra-site/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/Nunito.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="forest" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Multorra, back to top">
+    <img src="img/icon-192.png" alt="" width="36" height="36">
+    <span>Multorra</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="play/">Play now</a>
+    <a href="#how">How it plays</a>
+    <a href="#screens">Screens</a>
+    <a href="#features">Features</a>
+    <a href="#credits">Credits</a>
+  </nav>
+  <a class="btn btn-small" href="play/">Play now</a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <img class="logo pixel" src="img/logo.png" width="311" height="44" alt="Multorra">
+      <p class="eyebrow">A math runner · Play in your browser · Android coming soon</p>
+      <h1>Do the math.<br><span class="grad">Grow the army.</span></h1>
+      <p class="lede">Lead a squad of archers and mages up a three-lane road. Every gate asks a quick
+        question — 7 × 6, 63 ÷ 9, 48 + 17 — and the right swipe sends new heroes running to your side.
+        Pick the easy gate for a few, or the hard one for many.</p>
+      <div class="cta-row">
+        <a class="btn" href="play/">Play in your browser</a>
+        <a class="btn btn-ghost" href="#how">How it plays</a>
+      </div>
+      <ul class="badges" aria-label="Highlights">
+        <li>Free</li><li>No account</li><li>No ads</li><li>No install needed</li>
+      </ul>
+    </div>
+    <a class="scroll-hint" href="#how" aria-label="Scroll to how it plays"><span></span></a>
+  </section>
+
+  <section id="how" class="section how">
+    <div class="how-grid">
+      <div class="phone reveal" aria-label="Multorra on a phone">
+        <img class="pixel" src="img/screens/02_quiz-360.webp" width="360" height="720" alt="A question opens: a round wooden dial with four answers around it, the timer on its rim and the reward in the middle.">
+        <div class="gestures" aria-hidden="true">
+          <span class="g g-up">swipe ← → · lane</span>
+          <span class="g g-tap">swipe to the answer</span>
+          <span class="g g-hold">or tap it</span>
+        </div>
+      </div>
+      <div class="how-copy">
+        <h2 class="reveal">Every gate is a sum</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="num">1</span><div><h3>Run</h3><p>Your squad runs up the road on its own and fires at everything ahead. Swipe left or right to change lane and dodge orcs and skeletons.</p></div></li>
+          <li class="reveal"><span class="num">2</span><div><h3>Solve</h3><p>Steer into a gate and time slows down. Four answers sit around a dial: swipe toward the right one (or tap it) before the rim runs out. One star is an easy question, three stars a hard one with a bigger reward.</p></div></li>
+          <li class="reveal"><span class="num">3</span><div><h3>Grow</h3><p>Right answers recruit archers and mages or trigger bombs and rapid fire. A wrong answer? The road speeds up for a few seconds — hang on and keep going.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens" class="section screens">
+    <h2 class="reveal center">See it in action</h2>
+    <p class="sub center reveal">Real captures from the game. Tap any screenshot to enlarge.</p>
+    <div class="gallery portrait" id="gallery">
+      <!-- filled by main.js from SHOTS so captions and the lightbox stay in sync -->
+    </div>
+  </section>
+
+  <section class="chapters" aria-label="Things you meet on the road">
+    <div class="marquee"><div class="track" id="track"></div></div>
+  </section>
+
+  <section id="features" class="section features">
+    <h2 class="reveal center">More than flashcards</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>All four operations</h3>
+        <p>Adding, taking away, times tables and division, from 3 + 4 up to two-digit multiplication on the last levels.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 6.3L21 9l-5 4.4L17.5 20 12 16.6 6.5 20 8 13.4 3 9l6.4-.7z"/></svg>
+        <h3>Easy or hard, your call</h3>
+        <p>Gates come in pairs: a quick one-star sum for a small reward, or a three-star challenge for a bigger squad.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke-width="2"/><path d="M12 6v6l4 3" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Slow motion, not a buzzer</h3>
+        <p>The game slows down while you think instead of stopping cold. A wrong answer only means a short rush — no lives lost for one slip.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20l3-8-4-2 8-8-2 7 4 2z"/></svg>
+        <h3>Archers and mages</h3>
+        <p>Archers fire fast arrows that pierce two monsters; mages throw slow orbs that burst over a whole group. Mix them for the best squad.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c4-1 5-6 8-10s6-5 8-6c-1 4-2 8-6 11s-6 3-10 5z"/></svg>
+        <h3>A map to climb</h3>
+        <p>A winding path up through the meadow, with stars to earn on every level and bosses waiting at the top.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></svg>
+        <h3>No account, no ads</h3>
+        <p>Just play. No sign-up, no ads and nothing collected — progress is saved on your device only.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="play" class="section play">
+    <div class="play-card reveal">
+      <div>
+        <p class="eyebrow">No install, no account</p>
+        <h2>Play it right here</h2>
+        <p>The game runs in any modern browser, on a computer or a phone. The first load is about 10&nbsp;MB.
+          Your progress is saved in this browser only.</p>
+        <ul class="keys" aria-label="Keyboard controls">
+          <li><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> change lane</li>
+          <li><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd><kbd>←</kbd> pick an answer</li>
+        </ul>
+        <p class="fine">On a phone or with a mouse: swipe to steer, swipe toward an answer or tap it.</p>
+      </div>
+      <a class="btn btn-big" href="play/">Play now</a>
+    </div>
+  </section>
+
+  <section id="beta" class="section beta">
+    <div class="beta-card reveal">
+      <p class="eyebrow">Work in progress</p>
+      <h2>Tell us how it plays</h2>
+      <p>Multorra is early: ten levels, two hero types, more biomes on the way, and an Android beta on Google Play coming soon.
+        Too hard for a seven-year-old? Too easy for a ten-year-old? We'd love to know.</p>
+      <div class="report">
+        <div><h3>Found a bug? Questions too hard, too easy?</h3>
+          <p>Report it on GitHub — or browse what others have already found.</p></div>
+        <div class="report-btns">
+          <a class="btn btn-small" href="https://github.com/AlessioM/multorra-site/issues/new?template=bug.yml" rel="noopener">Report a bug</a>
+          <a class="btn btn-small btn-ghost" href="https://github.com/AlessioM/multorra-site/issues/new?template=feedback.yml" rel="noopener">Share feedback</a>
+          <a class="btn btn-small btn-ghost" href="https://github.com/AlessioM/multorra-site/issues" rel="noopener">All issues</a>
+        </div>
+      </div>
+      <p class="fine">No GitHub account? Feedback is just as welcome at
+        <a href="mailto:classic.forest.games@gmail.com">classic.forest.games@gmail.com</a>.</p>
+    </div>
+  </section>
+  <section id="credits" class="section credits">
+    <h2 class="reveal center">Credits</h2>
+    <p class="sub center reveal">Multorra stands on the shoulders of generous pixel artists and an open-source engine. Go and see their work.</p>
+    <div class="credit-grid">
+      <article class="credit reveal">
+        <p class="eyebrow">Art</p>
+        <h3><a href="https://anokolisa.itch.io/free-pixel-art-asset-pack-topdown-tileset-rpg-16x16-sprites" rel="noopener">Pixel Crawler – Free Pack</a></h3>
+        <p class="by">by <a href="https://anokolisa.itch.io/" rel="noopener">Anokolisa</a></p>
+        <p>Heroes (outfits painted on the pack's base body), orcs, skeletons, trees, plants, rocks, props and ground tiles.</p>
+        <p class="lic">Used under the Anokolisa asset terms.</p>
+      </article>
+      <article class="credit reveal">
+        <p class="eyebrow">UI, music &amp; sound</p>
+        <h3><a href="https://pixel-boy.itch.io/ninja-adventure-asset-pack" rel="noopener">Ninja Adventure – Asset Pack</a></h3>
+        <p class="by">by <a href="https://pixel-boy.itch.io/" rel="noopener">pixel-boy</a> &amp; AAA</p>
+        <p>Music, sound effects, the pixel font, UI skin, explosions, coins and power-up icons.</p>
+        <p class="lic">Released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0 1.0</a>.</p>
+      </article>
+      <article class="credit reveal">
+        <p class="eyebrow">Engine</p>
+        <h3><a href="https://godotengine.org" rel="noopener">Godot Engine</a></h3>
+        <p class="by">by Juan Linietsky, Ariel Manzur and the <a href="https://godotengine.org/license/" rel="noopener">Godot contributors</a></p>
+        <p>The free and open-source engine Multorra is built with.</p>
+        <p class="lic">MIT License.</p>
+      </article>
+      <article class="credit reveal">
+        <p class="eyebrow">This website</p>
+        <h3><a href="https://fonts.google.com/specimen/Nunito" rel="noopener">Nunito</a></h3>
+        <p class="by">by <a href="https://github.com/googlefonts/nunito" rel="noopener">The Nunito Project Authors</a></p>
+        <p>The typeface you are reading. The background is drawn in code.</p>
+        <p class="lic"><a href="fonts/OFL.txt">SIL Open Font License 1.1</a>.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand"><img src="img/icon-192.png" alt="" width="28" height="28"> Multorra</div>
+  <nav aria-label="Footer">
+    <a href="privacy/">Privacy policy</a>
+    <a href="#credits">Credits</a>
+    <a href="https://github.com/AlessioM/multorra-site/issues" rel="noopener">Report an issue</a>
+    <a href="mailto:classic.forest.games@gmail.com">Contact</a>
+  </nav>
+  <p>© 2026 Classic Forest Games · Pixel art by <a href="https://anokolisa.itch.io/" rel="noopener">Anokolisa</a>
+    and <a href="https://pixel-boy.itch.io/ninja-adventure-asset-pack" rel="noopener">pixel-boy &amp; AAA</a> ·
+    Made with <a href="https://godotengine.org" rel="noopener">Godot</a> ·
+    Nunito font under the <a href="fonts/OFL.txt">SIL Open Font License</a></p>
+</footer>
+
+<dialog id="lightbox" aria-label="Screenshot viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" aria-label="Previous screenshot">‹</button>
+  <figure><img id="lb-img" class="pixel" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-nav lb-next" aria-label="Next screenshot">›</button>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
